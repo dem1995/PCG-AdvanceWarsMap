@@ -24,9 +24,9 @@ Pipes and Pipeseams
 ║
 
 
-1	plains
-2	mountain
-3	woods
+1	P plains
+2	M mountain
+3	W woods
 4	═ river
 5	║ river
 6	¤ river
@@ -36,7 +36,7 @@ Pipes and Pipeseams
 10	╚ river
 11	╦ river
 12	╣ river
-13	╩ river		?
+13	╩ river
 14	╠ river
 15	═ road
 16	║ road
@@ -51,26 +51,26 @@ Pipes and Pipeseams
 25	┣ road
 26	╍ bridge
 27	╏ bridge
-28	ocean
-29	south-facing beach
-30	north-facing beach
-31	west-facing beach
-32	east-facing beach
+28	O ocean
+29	⬓ south-facing beach
+30	⬒ north-facing beach
+31	◧ west-facing beach
+32	◨ east-facing beach
 33	shoal
-34	neutral city
-35	neutral factory
-36	neutral airport
-37	neutral port
-38	orange city
-39	orange factory
-40	orange airport
-41	orange port
-42	orange hq
-43	blue city
-44	blue factory
-45	blue airport
-46	blue port
-47	blue hq
+34	🤍 neutral city
+35	⬜ neutral factory
+36	♢ neutral airport
+37	⚪ neutral port
+38	🧡 orange city
+39	🟧 orange factory
+40	🔶 orange airport
+41	🟠 orange port
+42	🌟 orange hq
+43	💙 blue city
+44	🟦 blue factory
+45	🔷 blue airport
+46	🔵 blue port
+47	🌙 blue hq
 48	green city
 49	green factory
 50	green airport
