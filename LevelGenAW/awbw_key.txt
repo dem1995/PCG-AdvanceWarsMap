@@ -1,0 +1,183 @@
+Plains
+
+P
+
+Mountains
+M
+
+Woods
+W
+
+Rivers
+R
+
+Sea
+S
+
+Reefs
+F
+
+Shoals
+ʃ
+
+Pipes and Pipeseams
+║
+
+
+1	plains
+2	mountain
+3	woods
+4	═ river
+5	║ river
+6	¤ river
+7	╔ river
+8	╗ river
+9	╝ river
+10	╚ river
+11	╦ river
+12	╣ river
+13	╩ river		?
+14	╠ river
+15	═ road
+16	║ road
+17	• road
+18	┏ road
+19	┓ road
+20	┛ road
+21	┗ road
+22	┳ road
+23	┫ road
+24	┻ road
+25	┣ road
+26	╍ bridge
+27	╏ bridge
+28	ocean
+29	south-facing beach
+30	north-facing beach
+31	west-facing beach
+32	east-facing beach
+33	shoal
+34	neutral city
+35	neutral factory
+36	neutral airport
+37	neutral port
+38	orange city
+39	orange factory
+40	orange airport
+41	orange port
+42	orange hq
+43	blue city
+44	blue factory
+45	blue airport
+46	blue port
+47	blue hq
+48	green city
+49	green factory
+50	green airport
+51	green port
+52	green hq
+53	yellow city
+54	yellow factory
+55	yellow airport
+56	yellow port
+57	yellow hq
+
+81	red city
+82	red factory
+83	red airport
+84	red port
+85	red hq
+86	grey city
+87	grey factory
+88	grey port
+90	grey hq
+91	black city
+92	black factory
+93	black airport
+94	black port
+95	black hq
+96	brown city
+97	brown factory
+98	brown airport
+99	brown port
+100	brown hq
+101	║ pipe
+102	═ pipe
+103	╚ pipe
+104	╔ pipe
+105	╗ pipe
+106	╝ pipe
+107	╽ pipe
+108	╾ pipe
+109	╿ pipe
+110	╼ pipe
+111	missile silo
+112	empty silo
+113	═ pipe seam
+114	║ pipe seam
+
+117	amber airport
+118	amber factory
+119	amber city
+120	amber hq
+121	amber port
+122	jade airport
+123	jade factory
+124	jade city
+125	jade hq
+126	jade port
+
+133	neutral comms tower
+138	amber lab
+139	black lab
+140	blue lab
+141	brown lab
+142	green lab
+143	grey lab
+144	jade lab
+145	neutral lab
+146	orange lab
+147	red lab
+148	yellow lab
+149	cobalt airport
+150	cobalt factory
+151	cobalt city
+152	cobalt comms tower
+153	cobalt hq
+154	cobalt lab
+155	cobalt port
+156	pink airport
+157	pink factory
+158	pink city
+159	pink comms tower
+160	pink hq
+161	pink lab
+162	pink port
+163	teal airport
+164	teal factory
+165	teal city
+166	teal comms tower
+167	teal hq
+168	teal lab
+169	teal port
+170	purple airport
+171	purple factory
+172	purple city
+173	purple comms tower
+174	purple hq
+175	purple lab
+176	purple port
+181	acid airport
+182	acid factory
+183	acid city
+184	acid comms tower
+185	acid hq
+186	acid lab
+187	acid port
+188	white airport
+189	white factory
+190	white city
+191	white comms tower
+192	white hq
+193	white lab
+194	white port
