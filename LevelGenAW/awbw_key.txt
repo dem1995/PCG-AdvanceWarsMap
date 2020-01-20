@@ -38,8 +38,8 @@ Pipes and Pipeseams
 12	╣ river
 13	╩ river
 14	╠ river
-15	═ road
-16	║ road
+15	━ road
+16	┃ road
 17	• road
 18	┏ road
 19	┓ road

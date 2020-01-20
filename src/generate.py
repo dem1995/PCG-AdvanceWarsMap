@@ -8,15 +8,15 @@ def generate_level(levelname, markovProbabilities, outputdirectory):
 
 	level = {}
 
-	maxY = 14
-	maxX = 100
+	maxY = 25
+	maxX = 25
 
 	for y in range(maxY, -1, -1):
 		level[y] =""
 		for x in range(0, maxX):
-			west = " "
-			southwest = " "
-			south = " "
+			west = "P"
+			southwest = "P"
+			south = "P"
 
 			if x>0: 
 				west = level[y][x-1]
@@ -36,7 +36,7 @@ def generate_level(levelname, markovProbabilities, outputdirectory):
 						break
 					currValue+=markovProbabilities[key][key2]
 			else:
-				level[y] +="-"
+				level[y] +="P"
 
 	with open(f"{outputdirectory}/{levelname}.txt", "a") as the_file:
 		for y in range(0, maxY+1):
