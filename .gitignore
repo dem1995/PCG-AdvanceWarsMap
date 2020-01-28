@@ -1,6 +1,9 @@
 #VScode project file
 .vscode/
 
+#Local files
+Bad\ Levels/
+Good\ Levels/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
