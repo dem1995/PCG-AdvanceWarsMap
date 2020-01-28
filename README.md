@@ -1,6 +1,8 @@
 # PCG-AdvanceWarsMap
 A program for generating Advance Wars maps using markov mappings.
 
+To generate levels, from the folder directory run python ./src/main.py. This will automatically populate ./LevelGenAW/GeneratedLevels with maps.
+
 The program comprises three main parts: map conversion, training, and generation/visualization.
 
 Conversion:
