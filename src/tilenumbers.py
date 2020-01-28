@@ -1,6 +1,8 @@
+"""File that contains discrete representations for tiles in Advance Wars, and which facilitate tile conversion."""
 from enum import Enum, IntEnum, unique, auto
 
 class Player(Enum):
+	"""Enum class to keep track of player colors and their respective tiles"""
 	ORANGE	= auto() 
 	BLUE	= auto()
 	GREEN	= auto()
@@ -25,6 +27,7 @@ class Player(Enum):
 
 
 class TileType(Enum):
+	"""The type of each tile"""
 	DEFAULT	= auto()
 	ROAD	= auto()
 	RIVER	= auto()
@@ -46,6 +49,7 @@ reverse_lookup = dict()
 
 @unique
 class Tile(IntEnum):
+	"""A mapping between tiles, AWBW's values for them, their symbols, and their sprite file names. Also tracks their associated players and categories."""
 	UNKNOWN				= 0,	None, TileType.DEFAULT, '*', 'unknown'
 	PLAINS				= 1,	None, TileType.DEFAULT, 'P', 'plains'
 	MOUNTAIN			= 2,	None, TileType.DEFAULT, 'M', 'mountains'
@@ -220,11 +224,6 @@ class Tile(IntEnum):
 		return obj
 
 Tile.reverse_lookup=reverse_lookup
-
-
-print(Player.BLUE.tiles)
-
-
 
 
 

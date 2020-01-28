@@ -1,15 +1,19 @@
+"""
+Scans processed level files for patterns and determines the probabilities with which, given a tile pattern about a tile, a given tile occurs. 
+Specifically, it keeps a dictionary of patterns; the keys are the subsets of the powerset of the ordered set of tiles adjacent to the given tile; the values themselves refer to dictionaries of probabilities. 
+Which cardinal directions' probability-dictionaries are tracked are modifiable via considereddirections and considerednames. 
+The dictionary of dictionaries of probabilities is stored in a pickle file (markovprobabilities.pickle) for use by the generator.
+"""
+
 import sys
 import os
 import glob
 import pickle
 
 from itertools import chain, combinations
-def powerset(iterable):
-    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
-    s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 
 def train_for_markovprobs(picklefile, folderlist):
+	"""Generates a pickle file for holding generated markov probabilities of tile occurrences"""
 	levelreadins = [] #list of levels (each level a list of rows) and level names
 	
 	#Load levels
@@ -23,11 +27,11 @@ def train_for_markovprobs(picklefile, folderlist):
 
 	#Extract Markov Random Field Counts from Levels
 	markovCounts = {}# Dictionary of (x-1, y), (x-1, y+1), (x, y+1)
-	for level, levelname in levelreadins:
+	for level, levelname in levelreadins:		#For each level
 		print ("Processing: " + levelname)
 		maxY = len(level)
 		maxX = len(level[0])
-		for y in range(maxY-1, -1, -1):
+		for y in range(maxY-1, -1, -1):			#For each (x, y) position in the level
 			for x in range(0, maxX):
 				east = " "
 				northeast = " "
@@ -72,6 +76,8 @@ def train_for_markovprobs(picklefile, folderlist):
 					s = list(iterable)
 					return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 
+				#Which directions are tracked for the markov model
+				#Add directions to this to track additional cardinal directions.
 				considereddirections = [east, west, southwest, south, southeast]
 				considerednames = ["E", "W", "SW", "S", "SE"]
 
@@ -83,6 +89,7 @@ def train_for_markovprobs(picklefile, folderlist):
 					value = "".join(key_values[index])
 					keys.append(prefix + value)
 
+				#Augment markov probabilities
 				for key in keys:
 					if not key in markovCounts.keys():
 						markovCounts[key] = {}
@@ -91,12 +98,8 @@ def train_for_markovprobs(picklefile, folderlist):
 						markovCounts[key][level[y][x]] = 0
 					markovCounts[key][level[y][x]] +=1.0
 
-	print(level)
 	#Normalize markov counts
 	markovProbabilities = {}
-
-
-	includenewline = False
 	for key in markovCounts.keys():
 		markovProbabilities[key] = {}
 		sumVal = 0
@@ -105,6 +108,7 @@ def train_for_markovprobs(picklefile, folderlist):
 		for key2 in markovCounts[key].keys():
 			markovProbabilities[key][key2] = markovCounts[key][key2]/sumVal
 
+	#store the markov counts to a pickle file for use by the generator.
 	pickle.dump(markovProbabilities, open(picklefile, "wb"))
 
 if __name__ == "__main__":
@@ -113,4 +117,4 @@ if __name__ == "__main__":
 	traindirs = [f"{workingfolder}/AWBW/Processed"]
 	train_for_markovprobs(picklefile, traindirs)
 	markovProbabilities = pickle.load(open(picklefile, "rb"))
-	#print(markovProbabilities)
+	print(markovProbabilities)

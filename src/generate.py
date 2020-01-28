@@ -1,3 +1,10 @@
+"""
+Generation is performed using the markov probability pickle created by training.py. 
+Generation involves proceeding from the bottom-left of a map and generating, left-to-right, row-by-row, the rows of a map. 
+To do this, it checks which tiles have already been generated; if there are any, it uses keys corresponding to those tiles in those directions to determine the probability of a new tile being something. 
+With some modification introduced by adding in a random value, it chooses the most probable tile under the circumstances at each step, or generates an unknown tile (represented by an upside-down smiley face) if there are no stored probabilities.
+"""
+
 import sys
 import os
 import glob
@@ -8,6 +15,7 @@ import itertools
 from collections import defaultdict
 
 def generate_level(levelname, markovProbabilities, outputdirectory):
+	"""Generates Advance Wars levels in .txt format probabilistically using the provided markovProbabilities"""
 	print(f"Generating level: {levelname}")
 
 	level = {}
@@ -119,22 +127,3 @@ def generate_level(levelname, markovProbabilities, outputdirectory):
 			for x in range(0, maxX):
 				the_file.write(tiles[(x, y)])
 			the_file.write("\n")
-
-# if __name__ == "__main__":
-
-# 	workingdir = "./LevelGenAW"
-
-# 	#The filepath of the folder to which to write files
-# 	outputdir = f"{workingdir}/GeneratedLevels"
-
-# 	#Wiping the files currently in that directory
-# 	files = glob.glob(f"{outputdir}/*")
-# 	for f in files:
-# 		os.remove(f)
-	
-# 	#Load the ??? probabilities
-# 	markovdir = f"{workingdir}/markovprobabilities.pickle"
-# 	markovProbabilities = pickle.load(open(markovdir, "rb"))
-
-# 	#Generate a level
-# 	generate_level("output", markovProbabilities, outputdir)

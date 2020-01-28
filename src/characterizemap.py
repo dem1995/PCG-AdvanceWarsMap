@@ -1,3 +1,8 @@
+"""
+Converts maps in AWBW csv representation into unicode-art-ish levels.
+Also modifies maps so that the only two factions are Orange Star and Blue Moon
+"""
+
 import csv
 import glob
 import os

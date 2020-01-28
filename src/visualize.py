@@ -5,6 +5,7 @@ from PIL import Image
 from tilenumbers import Tile
 
 def create_visualization(levelname, leveldirectory, spritesdirectory):
+	"""Visualizes Advance Wars levels converted using the rules in tilenumbers.py"""
 	#Load sprites
 	sprites = {}
 	for filename in glob.glob(f"{spritesdirectory}/**/*.png", recursive=True):

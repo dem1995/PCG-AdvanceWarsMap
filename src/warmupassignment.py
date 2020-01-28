@@ -13,7 +13,6 @@ parser.add_argument("-o", "--outdir", required=False, help="The directory to whi
 parser.add_argument("-s", "--spritedir", required=False, help="The top-level directory containing the sprites for visualization.")
 args = parser.parse_args()
 
-
 num_levels = 5
 
 workingfolder = args.workingdir or "./LevelGenAW"
@@ -34,12 +33,10 @@ files = glob.glob(f"{outputdir}/*")
 for f in files:
 	os.remove(f)
 
-#Load the ??? probabilities
+#Load the markov probabilities
 markovProbabilities = pickle.load(open(markovpickle, "rb"))
-#print(markovProbabilities)
 
 #Generate levels
-
 levelnum = 0
 while levelnum < num_levels:
 	levelname = f"Level{levelnum}"
