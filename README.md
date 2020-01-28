@@ -1,5 +1,5 @@
 # PCG-AdvanceWarsMap
-A program for generating Advance Wars maps using markov mappings.
+A program for generating Advance Wars maps using Markov mappings.
 
 To generate levels, from the folder directory run python ./src/main.py. This will automatically populate ./LevelGenAW/GeneratedLevels with maps.
 
@@ -17,4 +17,4 @@ Generation is performed by generate.py using the markov probability pickle creat
 
 It should be noted that the directions prioritized by the generator are west and south, as some of the tiles require adjacent tiles (for example, non-terminal pipes must eventually either end in a terminal pipe or go off the map, and curved river tiles only exist adjacent to two orthogonal river tiles). The generated maps are text files where each symbol is a tile, with symbols chosen by generalization.py using tilenumbers.py.
 
-Visualization uses visualize.py, which itself refers to tilenumbers.py to figure out which tile images correspond to each tile symbol in the genreated files.
+Visualization uses visualize.py, which itself refers to tilenumbers.py to figure out which tile images correspond to each tile symbol in the generated files.
